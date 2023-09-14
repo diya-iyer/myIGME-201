@@ -10,7 +10,7 @@ namespace PE6_IyerDiya
     // Author: Diya Iyer
     // Purpose: Hosting the main method
     // Restrictions: None
-    static internal class Program
+    static internal class Program 
     {
         // Method: Main
         // Purpose: Creating a game where the user tries to guess a randomly generated number between 1-100
