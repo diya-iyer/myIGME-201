@@ -24,7 +24,7 @@ namespace PE8_Q7
             string reversed = ReverseString(input);
 
             Console.WriteLine("Reversed string: " + reversed);
-
+        }
 
         // Method: ReverseString
         // Purpose: Manages reversing the string the user inputs
