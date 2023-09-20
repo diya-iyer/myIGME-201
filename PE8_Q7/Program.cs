@@ -25,10 +25,6 @@ namespace PE8_Q7
 
             Console.WriteLine("Reversed string: " + reversed);
 
-            // Wait for user input to close the console window
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
-        }
 
         // Method: ReverseString
         // Purpose: Manages reversing the string the user inputs
