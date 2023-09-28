@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MyEditor
 {
@@ -35,9 +36,46 @@ namespace MyEditor
             this.mSSansSerifToolStripMenuItem.Click += new EventHandler(MSSansSerifToolStripMenuItem_Click);
             this.timesNewRomanToolStripMenuItem.Click += new EventHandler(TimesNewRomanToolStripMenuItem_Click);
 
+            this.testToolStripButton.Click += new EventHandler(TestToolStripButton_Click);
             this.richTextBox.SelectionChanged += new EventHandler(RichTextBox_SelectionChanged);
+            
+            this.countdownLabel.Visible = false;
+
+            this.timer.Tick += new EventHandler(Timer_Tick);
+        }
+        private void TestToolStripButton_Click(object sender, EventArgs e)
+        {
+            this.timer.Interval = 500;
+
+            this.toolStripProgressBar.Value = 60;
+
+            this.countdownLabel.Text = "3";
+            this.countdownLabel.Visible = true;
+            this.richTextBox.Visible = false;
+
+            for(int i =3; i > 0; --i)
+            {
+                this.countdownLabel.Text = i.ToString();
+                this.Refresh();
+                Thread.Sleep(1000);
+            }
+
+            this.countdownLabel.Visible = false;
+            this.richTextBox.Visible = true;
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            --this.toolStripProgressBar.Value;
+            if (this.toolStripProgressBar.Value == 0)
+            {
+                this.timer.Stop();
+
+                string performance = "Congratulations! You typed " + Math.Round(this.richTextBox.TextLength / 30.0, 2) + " letters per second";
+
+                MessageBox.Show(performance);
+            }
+        }
         private void BoldToolStripMenuItem_Click (object sender, EventArgs e)
         {
             FontStyle fontStyle = FontStyle.Bold;
@@ -225,6 +263,11 @@ namespace MyEditor
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void richTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
