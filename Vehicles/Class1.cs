@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Vehicles
 {
     public abstract class Vehicle
-    {
+    { 
         public virtual void LoadPassenger() { 
         
         }
