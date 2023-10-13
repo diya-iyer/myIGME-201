@@ -237,14 +237,14 @@
             // mSSansSerifToolStripMenuItem
             // 
             this.mSSansSerifToolStripMenuItem.Name = "mSSansSerifToolStripMenuItem";
-            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.mSSansSerifToolStripMenuItem.Text = "MS Sans Serif";
             this.mSSansSerifToolStripMenuItem.ToolTipText = "MS Sans Serif";
             // 
             // timesNewRomanToolStripMenuItem
             // 
             this.timesNewRomanToolStripMenuItem.Name = "timesNewRomanToolStripMenuItem";
-            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.timesNewRomanToolStripMenuItem.Text = "Times New Roman";
             // 
             // toolStripSeparator2
