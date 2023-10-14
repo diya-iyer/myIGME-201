@@ -9,8 +9,8 @@ namespace CourseLib
 {
     public class Schedule
     {
-        public DateTime this.startTime;
-        public DateTime this.endTime;
+        public DateTime startTime;
+        public DateTime endTime;
         public List<DayOfWeek> daysOfWeek = new List<DayOfWeek>();
     }
 
