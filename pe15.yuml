@@ -1,0 +1,16 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// Interfaces
+[+ICustomer|+Greet()]
+
+// Classes
+[+Customer|+name:string;-creditCardNumber:string|+CreditCardNumber; +Greet();]
+[+A:HotDrink|+instant:boolean;+milk:boolean;-sugar:byte;+brand:string;+size:string;-customer:Customer|+AddSugar(amount:byte):v;+Steam() | (); | (brand:string)]
+[+CupOfCoffee|+beanType:string; +Steam()| () | (brand : string)]
+
+// Relationships
+[+ICustomer]^[+Customer]
+[+A:HotDrink]^-.-[+CupOfCoffee]
+
