@@ -11,6 +11,33 @@ namespace Unit2Exam_Q4567
     {
         static void Main(string[] args)
         {
+            Tardis myTardis = new Tardis();
+            PhoneBooth phoneBooth = new PhoneBooth();
+
+            UsePhone(myTardis);
+            UsePhone(phoneBooth);
+        }
+
+        static void UsePhone(object obj)
+        {
+            if (obj is PhoneInterface iPhone)
+            {
+                iPhone.MakeCall(); 
+                iPhone.HangUp();
+            }
+            else
+            {
+                Console.WriteLine("Object is not of type PhoneInterface.");
+            }
+
+            if (obj is PhoneBooth phoneBooth)
+            {
+                phoneBooth.OpenDoor();
+            }
+            else if (obj is Tardis myTardis)
+            {
+                myTardis.TimeTravel();
+            }
         }
     }
 
@@ -102,6 +129,79 @@ namespace Unit2Exam_Q4567
         {
 
         }
+
+        public static bool operator ==(Tardis t1, Tardis t2)
+        {
+            return t1.whichDrWho == t2.whichDrWho;
+        }
+
+        public static bool operator !=(Tardis t1, Tardis t2)
+        {
+            return t1.whichDrWho != t2.whichDrWho;
+        }
+
+        public static bool operator <(Tardis t1, Tardis t2)
+        {
+            if (t1.whichDrWho == 10)
+            {
+                return false;
+            }
+            else if (t2.whichDrWho == 10)
+            {
+                return true;
+            }
+            return t1.whichDrWho < t2.whichDrWho;
+        }
+
+        public static bool operator >(Tardis t1, Tardis t2)
+        {
+            if (t1.whichDrWho == 10)
+            {
+                return true;
+            }
+            else if (t2.whichDrWho == 10)
+            {
+                return false;
+            }
+            return t1.whichDrWho > t2.whichDrWho;
+        }
+
+        public static bool operator <=(Tardis t1, Tardis t2)
+        {
+            
+            if (t1.whichDrWho == 10)
+            {
+                if (t1.whichDrWho == t2.whichDrWho )
+                {
+                    return true;
+                }
+                return false;
+            }
+            else if (t2.whichDrWho == 10)
+            {
+                return true;
+            }
+            return t1.whichDrWho <= t2.whichDrWho;
+        }
+
+        public static bool operator >=(Tardis t1, Tardis t2)
+        {
+
+            if (t1.whichDrWho == 10)
+            {
+                if (t1.whichDrWho == t2.whichDrWho)
+                {
+                    return true;
+                }
+                return true;
+            }
+            else if (t2.whichDrWho == 10)
+            {
+                return false;
+            }
+            return t1.whichDrWho >= t2.whichDrWho;
+        }
+
     }
 
     public class PhoneBooth : PushButtonPhone
