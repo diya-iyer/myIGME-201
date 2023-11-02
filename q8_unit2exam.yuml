@@ -1,0 +1,20 @@
+// {type:class}
+
+// {generate:true}
+
+// {direction:topDown}
+
+[+A:Drawing|+drawType:string;+color:string; |+GetMaterials():a;+SetDrawingColor():v]
+
+[+IDigital|+DrawStroke();+Undo()]
+
+[+IPencil|+SharpenPencil();+UseEraser()]
+
+[+Digital|+DrawStroke();+Undo();+GetMaterials():o;+SetDrawingColor():o]
+
+[+Pencil|+SharpenPencil();+UseEraser();+GetMaterials():o]
+
+[+A:Drawing]<-.-[+Digital]
+[+A:Drawing]<-.-[+Pencil]
+[+IDigital]^[+Digital]
+[+IPencil]^[+Pencil]
