@@ -66,7 +66,7 @@ namespace DynamicPeople
         
         }
 
-        private void AddPersonToPanel(ref Panel panel, Person person)
+        private void AddPersonToPanel(ref Panel panel1, Person person)
         {
             Label emailLabel = new System.Windows.Forms.Label();
             ToolStrip toolStrip1 = new System.Windows.Forms.ToolStrip();
