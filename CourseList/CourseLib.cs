@@ -75,10 +75,10 @@ namespace CourseLib
 
         public Course()
         {
-
+            
         }
 
-        public Course(string courseCode, string description)
+        public Course( string courseCode, string description )
         {
             this.courseCode = courseCode;
             this.description = description;
@@ -166,4 +166,3 @@ namespace CourseLib
         }
     }
 }
-
