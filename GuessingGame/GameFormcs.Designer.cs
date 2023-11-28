@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guessTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guessButton = new System.Windows.Forms.Button();
+            this.outputLabel = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.guessLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // guessTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 0;
+            this.guessTextBox.Location = new System.Drawing.Point(147, 53);
+            this.guessTextBox.Name = "guessTextBox";
+            this.guessTextBox.Size = new System.Drawing.Size(158, 20);
+            this.guessTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -61,24 +63,46 @@
             this.guessButton.Text = "Guess";
             this.guessButton.UseVisualStyleBackColor = true;
             // 
-            // guessLabel
+            // outputLabel
             // 
-            this.guessLabel.AutoSize = true;
-            this.guessLabel.Location = new System.Drawing.Point(168, 91);
-            this.guessLabel.Name = "guessLabel";
-            this.guessLabel.Size = new System.Drawing.Size(35, 13);
-            this.guessLabel.TabIndex = 3;
-            this.guessLabel.Text = "label2";
+            this.outputLabel.AutoSize = true;
+            this.outputLabel.Location = new System.Drawing.Point(144, 94);
+            this.outputLabel.Name = "outputLabel";
+            this.outputLabel.Size = new System.Drawing.Size(0, 13);
+            this.outputLabel.TabIndex = 3;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 171);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(397, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 171);
+            this.progressBar1.Maximum = 45;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(397, 23);
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Value = 45;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
             // 
             // GameFormcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 193);
-            this.Controls.Add(this.guessLabel);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.guessButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.guessTextBox);
             this.Name = "GameFormcs";
             this.Text = "GameFormcs";
             this.ResumeLayout(false);
@@ -88,10 +112,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox guessTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button guessButton;
+        private System.Windows.Forms.Label outputLabel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label guessLabel;
     }
 }

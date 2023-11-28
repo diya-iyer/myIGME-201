@@ -15,6 +15,9 @@ namespace GuessingGame
         public Form1()
         {
             InitializeComponent();
+            this.startButton.Click += new EventHandler(StartButton_Click);
+            this.lowNumberTextBox.KeyPress += new KeyPressEventHandler(LowNumberTextBox_KeyPress);
+            this.highNumberTextBox.KeyPress += new KeyPressEventHandler(HighNumberTextBox_KeyPress);
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -26,11 +29,11 @@ namespace GuessingGame
             // convert the strings entered in lowTextBox and highTextBox
             // to lowNumber and highNumber Int32.Parse
 
-            lowNumber = Int32.Parse(lowNumberTextBox.Text);
-            highNumber = Int32.Parse(highNumberTextBox.Text);
+            bConv = Int32.TryParse(this.lowNumberTextBox.Text, out lowNumber);
+            bConv &= Int32.TryParse(this.highNumberTextBox.Text, out highNumber);
 
             // if not a valid range
-            if ( ??? )
+            if (!bConv || lowNumber >= highNumber)
             {
                 // show a dialog that the numbers are not valid
                 MessageBox.Show("The numbers are invalid.");
@@ -40,12 +43,24 @@ namespace GuessingGame
                 // otherwise we're good
                 // create a form object of the second form 
                 // passing in the number range
-                GameForm gameForm = new GameForm(lowNumber, highNumber);
+                GameFormcs gameForm = new GameFormcs(lowNumber, highNumber);
 
                 // display the form as a modal dialog, 
                 // which makes the first form inactive
                 gameForm.ShowDialog();
             }
+        }
+
+        private void LowNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits 
+            e.Handled = !Char.IsDigit(e.KeyChar); 
+        }
+
+        private void HighNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits and control keys
+            e.Handled = !Char.IsDigit(e.KeyChar); 
         }
 
     }
